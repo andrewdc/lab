@@ -1,0 +1,6 @@
+@import "./src/base/_theme";
+@import "./src/base/_extends";
+
+.atoms {
+  @extend %panel;
+}

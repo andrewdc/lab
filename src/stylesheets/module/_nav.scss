@@ -1,0 +1,106 @@
+html, body {
+  @include breakpoint(small) {
+    height:100%;
+  }
+  @include breakpoint(mobile) {
+    height:100%;
+  }
+}
+
+
+
+.nav {
+
+}
+.navlist {}
+
+//fixed bar
+.navbar--fixed {
+  @extend .nav;
+  position: fixed;
+  width:100%;
+  top:0px;
+  z-index: 500;
+
+
+  //navlist sidebar
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    width:85%;
+    top:0;
+    display: flex;
+    flex-direction: column;
+  }
+  .navlist {
+    @include bg-transparentize($transparency: .10);
+     line-height:1.4em;
+     font-size:1.1em;
+     border:1px solid hsla(0, 0, 100%, 0.2);
+     border-left:none;
+     margin-top: -2px;//border height offset. Thanks border-box model
+     padding:0;
+     border-radius:0 2px 2px 0;
+     text-shadow:0 1px 3px rgba(0,0,0,0.44);
+
+      margin:41px 0 0 0;
+      height: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex:1 1 auto;
+      overflow-y: auto;
+      & > li {
+        padding:15px 0;
+        flex:1;
+      }
+    .sidebar-logo {
+      flex:2;
+      align-items:center;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+ .navlist a {
+   font-family:nxsass(font, header);
+   display: block;
+   padding:nxsass(type, gutter)/4 nxsass(type, gutter)/2;
+   color:nxsass(incomm, ic--darkgrey);
+   opacity:0.8;
+   border-bottom:1px solid rgba(0,0,0,0.44);;
+   .fa {
+     opacity:0.4;
+     float: right;
+     line-height:1.5em;
+     font-size:.8em;
+   }
+   &:hover {
+     opacity:1;
+     background:rgba(255,255,255,0.2);
+     text-decoration:none;
+     color:nxsass(incomm, ic--white);
+     .fa {
+       opacity:1;
+     }
+   }
+ }
+
+.nav-logo {
+  @include float(top);
+  width:0px;
+}
+.nav-tabs {
+  @include float(top);
+}
+
+.navlist-trigger {
+  @include float(middle);
+  border-radius: 100%;
+  padding:6px;
+  margin:5px;
+  background: #000;
+  width:30px;
+  text-align: center;
+}

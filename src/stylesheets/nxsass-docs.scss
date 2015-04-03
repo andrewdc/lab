@@ -1,0 +1,53 @@
+// app.scss is your application style manifest.
+// We import configuration and base items first with a sub-manifest config file in /base
+
+//========================================================
+// BASE
+@import "base/_config";
+
+// _config includes several nxsass dependencies and tools.
+// It also includes a local empty _app-vars file where you
+// define app variables and override nxsass defaults.
+// Also we include an empty local _base file for defining
+// core HTML tag styles.
+//========================================================
+
+//========================================================
+// nxsass MODULES
+// To use nxsass you may choose to include any modules you require.
+// If you use our 'gulp bower' task these paths should be correct.
+// Comment in only what you need ========================
+
+// @import "../../../css/source/module/_button";
+// @import "../../../css/source/module/_container";
+// @import "../../../css/source/module/_credit-cards";
+// @import "../../../css/source/module/_customize";
+// @import "../../../css/source/module/_date-time";
+// @import "../../../css/source/module/_form";
+// @import "../../../css/source/module/_grid-picker"; //THIS IS DEPRECATED
+// @import "../../../css/source/module/_hover-cart";
+// @import "../../../css/source/module/_item";
+// @import "../../../css/source/module/_list-table";
+// @import "../../../css/source/module/_loader";
+// @import "../../../css/source/module/_location";
+// @import "../../../css/source/module/_modal";
+// @import "../../../css/source/module/_notify";
+// @import "../../../css/source/module/_progress-bar";
+// @import "../../../css/source/module/_progress-nav";
+// @import "../../../css/source/module/_quick-value";
+// @import "../../../css/source/module/_rotation-cube";
+// @import "../../../css/source/module/_tab-subnav";
+// @import "../../../css/source/module/_tests";
+// @import "../../../css/source/module/_toggle";
+// @import "../../../css/source/module/_tooltip";
+// @import "../../../css/source/module/_uploader";
+//========================================================
+
+
+//==============================================================
+// APPLICATION MODULES
+// This is where you add sass modules in your application
+// Place them in your local /module directory as shown below
+//==============================================================
+
+// @import "module/_docs";
