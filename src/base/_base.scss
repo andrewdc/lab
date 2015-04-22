@@ -26,7 +26,7 @@ p {
 
 body {
   font-family: q-var(font, body);
-  background: q-var(images, background) no-repeat center center fixed;
+  background: q-var(core, body-background) no-repeat center center fixed;
   background-size: cover;
   color: q-var(color, theme-text);
   font-size: q-var(type, base-size);

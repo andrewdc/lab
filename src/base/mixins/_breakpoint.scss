@@ -19,4 +19,7 @@ $break-large: 1200px; //1350px
   @else if $media == print {
     @media print { @content; }
   }
+  @else if {
+    @media only screen and (max-width: $media) and (min-width:$media + 1) { @content; }
+  }
 }
