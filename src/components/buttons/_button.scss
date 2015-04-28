@@ -8,13 +8,13 @@
   text-align:center;
   vertical-align: middle;
   cursor: pointer;
-  padding:q-var(type, base-line)/2 q-var(type, gutter);
-  font-weight:q-var(font, weight--bold);
+  padding:qvar(type, base-line)/2 qvar(type, gutter);
+  font-weight:qvar(font, weight--bold);
   border:none;
-  border-radius: 3px;
+  border-radius:qvar(core, border-radius);
   &.is-disabled, &.is-disabled:hover, &[disabled], &[disabled]:hover {
-    color: darken(q-var(button, text-default), 50);
-    background:q-var(button, color-disabled);
+    color: darken(qvar(button, text-default), 50);
+    background:qvar(button, color-disabled);
     text-shadow: none;
     box-shadow: none;
     cursor: default;
@@ -26,38 +26,38 @@
   @include button-defaults();
 }
 .btn--success, .btn--add, .btn-primary.active  {
-  @include button-defaults($bg-color: q-var(button, color-add));
+  @include button-defaults($bg-color: qvar(button, color-add));
 }
 .btn--checkout  {
-  @include button-defaults($bg-color: q-var(button, color-checkout));
+  @include button-defaults($bg-color: qvar(button, color-checkout));
 }
 .btn--warn  {
-  @include button-defaults($bg-color: q-var(button, color-warn));
+  @include button-defaults($bg-color: qvar(button, color-warn));
 }
 //Minimal Buttons
 .btn--modify {
   @include button-minimals();
 }
 .btn--reset {
-  @include button-minimals($color: q-var(button, color-act));
+  @include button-minimals($color: qvar(button, color-act));
 }
 .btn--cancel {
-  @include button-minimals($color: q-var(button, color-warn));
+  @include button-minimals($color: qvar(button, color-warn));
 }
 //States
 button {
   &.is-successful, &.is-successful:hover {
-    @include button-defaults($bg-color: q-var(button, color-add));
+    @include button-defaults($bg-color: qvar(button, color-add));
     transition: .5s all ease-in;
     cursor: default;
   }
   &.is-failed, &.is-failed:hover {
-    @include button-defaults($bg-color: q-var(button, color-warn));
+    @include button-defaults($bg-color: qvar(button, color-warn));
     transition: .5s all ease-out;
     cursor: default;
   }
   &.is-waiting, &.is-waiting:hover {
-    @include button-defaults($bg-color: q-var(button, color-checkout));
+    @include button-defaults($bg-color: qvar(button, color-checkout));
     transition: .5s all ease-in;
     cursor: default;
     i {
@@ -75,10 +75,10 @@ button {
   box-shadow:none;
   padding:2px 4px;
   margin:0;
-  color:q-var(incomm, ic--midlightgrey);
+  color:qvar(incomm, ic--midlightgrey);
   transition:all .18s ease-in-out;
   &:hover, &:focus {
-    color:q-var(button, color-warn);
+    color:qvar(button, color-warn);
     font-size:17px;
     background:none;
     box-shadow:none;
@@ -91,10 +91,10 @@ button {
   width:100%;
   border-radius:3px 3px 0 0;
   // &:disabled {
-  //   color:q-var(incomm, ic--lightgrey);
+  //   color:qvar(incomm, ic--lightgrey);
   //     &:hover {
-  //     background:q-var(incomm, ic--superlightgrey);
-  //     color:q-var(incomm, ic--lightgrey);
+  //     background:qvar(incomm, ic--superlightgrey);
+  //     color:qvar(incomm, ic--lightgrey);
   //     cursor:default;
   //   }
   // }

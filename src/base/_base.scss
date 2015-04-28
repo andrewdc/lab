@@ -6,7 +6,7 @@ html {
 }
 
 html, body {
-  //height: 100%;
+  height: qvar(core, body-height);
 }
 
 *, *:before, *:after {
@@ -18,74 +18,74 @@ html, body {
 }
 
 p {
-  font-size: q-var(type, base-size);
-  line-height: q-var(type, base-line);
-  margin-bottom: q-var(type, base-line);
-  font-weight: q-var(font, weight--light);
+  font-size: qvar(type, base-size);
+  line-height: qvar(type, base-line);
+  margin-bottom: qvar(type, base-line);
+  font-weight: qvar(font, weight--light);
 }
 
 body {
-  font-family: q-var(font, body);
-  background: q-var(core, body-background) no-repeat center center fixed;
+  font-family: qvar(font, body);
+  background: qvar(core, body-background) no-repeat center center fixed;
   background-size: cover;
-  color: q-var(color, theme-text);
-  font-size: q-var(type, base-size);
-  line-height: q-var(type, base-line);
-  font-weight: q-var(font, weight--light);
+  color: qvar(color, theme-text);
+  font-size: qvar(type, base-size);
+  line-height: qvar(type, base-line);
+  font-weight: qvar(font, weight--light);
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  color: q-var(color, dark);
-  font-family: q-var(font, header);
+  color: qvar(color, dark);
+  font-family: qvar(font, header);
 }
 
 h1 {
-  font-size: q-var(type, base-size) * 2.7;
-  line-height: q-var(type, base-line) * 2.7;
-  margin-bottom: q-var(type, base-line);
+  font-size: qvar(type, base-size) * 2.7;
+  line-height: qvar(type, base-line) * 2.7;
+  margin-bottom: qvar(type, base-line);
 }
 
 h2 {
-  font-size: q-var(type, base-size) * 2.3;
-  line-height: q-var(type, base-line) * 2.3;
-  margin-bottom: q-var(type, base-line);
+  font-size: qvar(type, base-size) * 2.3;
+  line-height: qvar(type, base-line) * 2.3;
+  margin-bottom: qvar(type, base-line);
 }
 
 h3 {
-  font-size: q-var(type, base-size) * 2;
-  line-height: q-var(type, base-line) * 2;
-  margin-bottom: q-var(type, base-line);
-  font-weight: q-var(font, weight--bold);
+  font-size: qvar(type, base-size) * 2;
+  line-height: qvar(type, base-line) * 2;
+  margin-bottom: qvar(type, base-line);
+  font-weight: qvar(font, weight--bold);
 }
 
 h4 {
-  font-size: q-var(type, base-size) * 1.3;
-  line-height: q-var(type, base-line) * 1.3;
-  margin-bottom: q-var(type, base-line) / 2.5;
+  font-size: qvar(type, base-size) * 1.3;
+  line-height: qvar(type, base-line) * 1.3;
+  margin-bottom: qvar(type, base-line) / 2.5;
 }
 
 h5 {
-  font-family: q-var(font, header);
-  font-size: q-var(type, base-size);
-  line-height: q-var(type, base-line);
-  margin-bottom: q-var(type, base-line) / 4;
-  font-weight: q-var(font, weight--bold);
+  font-family: qvar(font, header);
+  font-size: qvar(type, base-size);
+  line-height: qvar(type, base-line);
+  margin-bottom: qvar(type, base-line) / 4;
+  font-weight: qvar(font, weight--bold);
 }
 
 h6 {
-  font-family: q-var(font, header);
-  color: lighten(q-var(color, theme-text), 20%);
+  font-family: qvar(font, header);
+  color: lighten(qvar(color, theme-text), 20%);
   font-style: italic;
-  font-size: q-var(type, base-size);
-  line-height: q-var(type, base-line);
-  margin-bottom: q-var(type, base-line) / 4;
-  font-weight: q-var(font, weight--light);
+  font-size: qvar(type, base-size);
+  line-height: qvar(type, base-line);
+  margin-bottom: qvar(type, base-line) / 4;
+  font-weight: qvar(font, weight--light);
 }
 
 a {
   cursor: pointer;
-  color: q-var(color, light);
+  color: qvar(color, light);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -100,8 +100,8 @@ img {
 hr {
   border: 0;
   height: 1px;
-  background: lighten(q-var(color, theme-text), 40%);
-  margin-bottom: q-var(type, base-line);
+  background: lighten(qvar(color, theme-text), 40%);
+  margin-bottom: qvar(type, base-line);
 }
 fieldset {
   border: none;

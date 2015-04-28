@@ -1,52 +1,53 @@
-$q-var: (
+$qvar: (
   font: (
     header: ("Josefin Sans", sans-serif),
     body:   ("Open Sans", sans-serif),
     code:   ("Source Code Pro", sans-serif),
-    weight--thin: 100,
-    weight--light: 300,
+    weight--thin:     100,
+    weight--light:     300,
     weight--regular: 400,
     weight--normal: 400,
-    weight--bold: 700,
-    weight--heavy: 800
+    weight--bold:     700,
+    weight--heavy:  800
   ),
   core: (
-    border-radius: 2px,
-    space: 15px,
-    body-background: none
+    border-radius:      2px,
+    space:                  15px,
+    body-background: none,
+    body-height:          auto
   ),
   type: (
-    base-size: 14px,
-    base-line: 14px*1.375,
+    base-size:      14px,
+    base-line:       14px*1.375,
     base-leading: 14px*1.375,
-    gutter: 30px
+    gutter:             30px
   ),
   color: (
-    light:        #8db5e1,
-    dark:         #212121,
-    theme-text:   hsl(0, 0%, 40%),
-    act:          #28AAD0,
-    add:          #5CC281,
-    invalid:      hsl(345, 75%, 40%),
-    valid:        hsl(194, 58%, 74%),
+    light:           #8db5e1,
+    dark:           #212121,
+    theme-text: hsl(0, 0%, 40%),
+    act:             #28AAD0,
+    add:            #5CC281,
+    invalid:        hsl(345, 75%, 40%),
+    valid:           hsl(194, 58%, 74%),
     required:     hsl(345, 75%, 40%)
   ),
   incomm: (
-    ic--red:            #cc0033,
-    ic--blue:           #6699cc,
-    ic--darkgrey:       #333333,
+    ic--red:                  #cc0033,
+    ic--blue:                 #6699cc,
+    ic--darkgrey:          #333333,
     ic--middarkgrey:    #666666,
-    ic--midlightgrey:   #999999,
-    ic--lightgrey:      #cccccc,
+    ic--midlightgrey:     #999999,
+    ic--lightgrey:          #cccccc,
     ic--superlightgrey: #e7e7e8,
-    ic--white:          #ffffff,
-    ic--orange:         #DE5A2E,
-    ic--yellow:         #DFAC44
+    ic--white:               #ffffff,
+    ic--orange:            #DE5A2E,
+    ic--yellow:             #DFAC44
   ),
   credit-cards: (
-    visa:            #23288F,
-    mastercard:      #CC7404,
-    americanexpress: #1BAA76,
+    visa:                       #23288F,
+    mastercard:           #CC7404,
+    americanexpress:  #1BAA76,
   ),
   panel: (
     padding: 15px,
@@ -104,15 +105,15 @@ $app-vars: (
 );
 
 
-@function q-var($key, $value) {
+@function qvar($key, $value) {
   @if (map-has-key($app-vars, $key)) {
   @if (map-has-key( map-get($app-vars, $key), $value)) {
     @return map-get(map-get($app-vars, $key), $value);
   } @else {
-    @return map-get(map-get($q-var, $key), $value);
+    @return map-get(map-get($qvar, $key), $value);
   }
   } @else {
-   @return map-get(map-get($q-var, $key), $value);
+   @return map-get(map-get($qvar, $key), $value);
   }
 }
 

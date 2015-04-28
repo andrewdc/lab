@@ -1,4 +1,4 @@
-@mixin icon-text($background: hsla(221, 95%, 61%, 0), $color-icon: q-var(incomm, ic--midlightgrey), $color-text: white) {
+@mixin icon-text($background: hsla(221, 95%, 61%, 0), $color-icon: qvar(incomm, ic--midlightgrey), $color-text: white) {
   position: relative;
   background: $background;
   padding: 4px 4px 3px 4px;

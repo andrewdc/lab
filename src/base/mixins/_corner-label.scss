@@ -9,7 +9,7 @@
     padding:3px 4px;
     font-size:10px;
     color:$color;
-    border-radius:q-var(panel, border-radius);
+    border-radius:qvar(panel, border-radius);
     z-index: 2;
   }
 }

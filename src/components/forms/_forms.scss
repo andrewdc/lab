@@ -5,26 +5,25 @@
 form {
   @extend %cleared;
   width: 100%;
-  //max-width: 1068px;
   .is-invalid {
     .label-text {
-      color: q-var(color, invalid);
+      color: qvar(color, invalid);
     }
     input, textarea, select {
-      border-left: 5px solid desaturate(lighten(q-var(color, invalid), 20), 50);
+      border-left: 5px solid desaturate(lighten(qvar(color, invalid), 20), 50);
     }
   }
   .invalid-message {
-    color: q-var(color, invalid);
+    color: qvar(color, invalid);
     text-transform: uppercase;
     font-size: 11px;
   }
 }
 label{
-  font-family:q-var(font, body);
+  font-family:qvar(font, body);
   display: inline-block;
   text-align: left;
-  color:q-var(incomm, ic--midlightgrey);
+  color:qvar(incomm, ic--midlightgrey);
   width: 100%;
   min-width: 200px;
   position: relative;
@@ -33,35 +32,32 @@ label{
   float: none;
   display: inline-block;
 }
-// input + div { // makes checkbox & radio labels wrap properly with input
-//   float: none;
-// }
 input + input {
   margin-top: 10px;
 }
 input, select, textarea {
-  border:1px solid darken(q-var(incomm, ic--superlightgrey), 8);
-  border-radius: q-var(panel, border-radius);
+  border:1px solid darken(qvar(incomm, ic--superlightgrey), 8);
+  border-radius: qvar(panel, border-radius);
   box-sizing: border-box; //undoing weird normalizer bs
   padding:8px 6px;
   min-height:37px;
   margin-top: 3px;
   margin-bottom: 0;
-  background:lighten(q-var(incomm, ic--superlightgrey), 5);
+  background:lighten(qvar(incomm, ic--superlightgrey), 5);
   box-shadow:hsla(0,0,0, 0.05) 0 2px 1px 0 inset, hsla(0, 100%, 100%, 0.8) 0 -1px 4px -1px inset;
-  color:darken(q-var(incomm, ic--midlightgrey), 20);
+  color:darken(qvar(incomm, ic--midlightgrey), 20);
   font-weight:500;
-  font-family:q-var(font, body);
+  font-family:qvar(font, body);
   text-shadow:rgba(255,255,255, 0.025) 0 1px 0;
   width: 100%;
    transition: all 0.08s ease-in-out;
   &::placeholder {
-    color:q-var(incomm, ic--lightgrey);
+    color:qvar(incomm, ic--lightgrey);
     font-style: italic;
   }
 }
 button {
-   font-family:q-var(font, body);
+   font-family:qvar(font, body);
 }
 input[type="checkbox"], input[type="radio"] {
   float: left;
@@ -97,13 +93,13 @@ label.is-valid {
 }
 %message-bubble {
   font-size: 12px;
-  font-family:q-var(font, body);
-  background-color: q-var(incomm, ic--white);
+  font-family:qvar(font, body);
+  background-color: qvar(incomm, ic--white);
   box-shadow:0 0 1px 1px hsla(0,0,0,0.3);
   line-height: 1.3em;
   padding: 3px 5px;
   position: absolute;
-  border-radius: q-var(panel, border-radius);
+  border-radius: qvar(panel, border-radius);
   z-index:5;
 }
 
@@ -127,7 +123,7 @@ label:hover, label:active, label:focus {
   opacity:1.0;
   margin-bottom: 10px;
   margin-top: 3px;
-  line-height: q-var(type, base-leading);
+  line-height: qvar(type, base-leading);
 }
 // For demo, needs to be hidden until submit check
 
@@ -139,35 +135,35 @@ label:hover, label:active, label:focus {
 }
 .is-required {
   input, select {
-    border-left:5px solid q-var(color, required);
+    border-left:5px solid qvar(color, required);
   }
 
 }
 
 // INVALID ====================
 .is-invalid {
-  font-weight: q-var(font, weight--bold);
+  font-weight: qvar(font, weight--bold);
   input, select {
-    border-color:q-var(color, invalid);
+    border-color:qvar(color, invalid);
     &:focus{
-      border:lighten(q-var(color, invalid), 25);
+      border:lighten(qvar(color, invalid), 25);
     }
   }
   &:before {
     content: '!';
-    color:q-var(color, invalid);
+    color:qvar(color, invalid);
     position: absolute;
     width: 10px;
     right: 10px;
     text-align: right;
     top: 30px;
-    font-weight: q-var(font, weight--bold);
+    font-weight: qvar(font, weight--bold);
     font-size: 20px;
   }
   &.is-dirty, &.is-dirty.is-required {
     input, select{
-      background-color: desaturate(lighten(q-var(incomm, ic--red), 55), 35);
-      border-left:5px solid q-var(color, required);
+      background-color: desaturate(lighten(qvar(incomm, ic--red), 55), 35);
+      border-left:5px solid qvar(color, required);
     }
   }
   &.input--select:before{
@@ -183,18 +179,18 @@ label:hover, label:active, label:focus {
 //PRISTINE=========================
 .is-pristine {
     input, select {
-    border:1px solid q-var(incomm, ic--superlightgrey);
-    border-left:5px solid q-var(incomm, ic--superlightgrey);
+    border:1px solid qvar(incomm, ic--superlightgrey);
+    border-left:5px solid qvar(incomm, ic--superlightgrey);
   }
   &.is-required {
     input, select {
-      border-left:5px solid q-var(color, required);
+      border-left:5px solid qvar(color, required);
     }
   }
 }
 .is-pristine.is-required.is-valid {
  input, select {
-    border-left: 5px solid q-var(color, valid);
+    border-left: 5px solid qvar(color, valid);
   }
 }
 .is-pristine.is-required.is-invalid {
@@ -202,10 +198,10 @@ label:hover, label:active, label:focus {
     display: none;
   }
   .label-text {
-    color:q-var(incomm, ic--midlightgrey);
+    color:qvar(incomm, ic--midlightgrey);
   }
   input, select {
-    border-left: 5px solid q-var(color, required);
+    border-left: 5px solid qvar(color, required);
   }
 }
 
@@ -221,12 +217,12 @@ label:hover, label:active, label:focus {
     font-size: 10px;
     line-height: 12px;
     padding:1px 3px;
-    color:q-var(incomm, ic--white);
-    background: q-var(color, invalid);
-    border-radius:0 q-var(panel, border-radius) 0 q-var(panel, border-radius);
+    color:qvar(incomm, ic--white);
+    background: qvar(color, invalid);
+    border-radius:0 qvar(panel, border-radius) 0 qvar(panel, border-radius);
   }
   & + input[type="email"]{
-    border:1px solid q-var(color, invalid);
+    border:1px solid qvar(color, invalid);
   }
 }
  //============== angular field validation classes

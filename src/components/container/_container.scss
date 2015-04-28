@@ -7,9 +7,9 @@
   box-sizing: border-box;
   width:100%;
   max-width:950px;
-  margin:q-var(container, margin);
-  padding:q-var(container, padding);
-  background:q-var(container, background);
+  margin:qvar(container, margin);
+  padding:qvar(container, padding);
+  background:qvar(container, background);
   @include breakpoint(wide) {
     width:950px;
     margin:0 auto;
@@ -26,7 +26,7 @@
     float: left;
     margin:0 0 0 35%;
     width:65%;
-    padding:q-var(type, gutter);
+    padding:qvar(core, space);
   }
   float: none;
   width:100%;
