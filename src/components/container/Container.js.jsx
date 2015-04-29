@@ -4,13 +4,13 @@
 const React = require("react");
 require("components/container/_container");
 
-const Atoms = require("components/atoms/Atoms.js.jsx");
+const Docs = require("components/docs/Docs.js.jsx");
 
 const Container = React.createClass({
   render: function () {
     return (
         <div className="container">
-          <Atoms />
+          <Docs />
         </div>
       );
 
