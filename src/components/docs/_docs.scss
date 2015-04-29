@@ -2,6 +2,12 @@
 @import "./src/base/_theme";
 @import "./src/base/_extends";
 
+$border-glass:hsla(0, 0, 100%, 0.2);
+
+body {
+  font-family: qvar(font, body);
+}
+
 .wrapper {
   padding:0 qvar(core, space) qvar(core, space) 0;
   @include breakpoint(small) {
@@ -21,6 +27,17 @@ main {
   @include breakpoint(mobile) {
     margin-left: 0;
   }
+}
+
+main section{
+  border:1px solid $border-glass;
+  border-radius:2px;
+  clear: left;
+  padding:5px qvar(core, space)/2 qvar(core, space) qvar(core, space)/2;
+  margin-bottom:qvar(core, space);
+  min-width: $half;
+  margin-top: -2px;
+  @include clearfix();
 }
 
 code {
