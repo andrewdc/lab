@@ -1,5 +1,5 @@
 {
-  "name": "lab",
+  "name": "quiver",
   "version": "0.0.0",
   "main": "app/main.js",
   "scripts": {
@@ -53,5 +53,19 @@
     "predef": [
       "alert"
     ]
-  }
+  },
+  "description": "playing around with webpack, React, re-architecting a sass module system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewdc/lab.git"
+  },
+  "keywords": [
+    "sass",
+    "styleguide",
+    "ui"
+  ],
+  "bugs": {
+    "url": "https://github.com/andrewdc/lab/issues"
+  },
+  "homepage": "https://github.com/andrewdc/lab"
 }
