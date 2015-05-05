@@ -2,48 +2,29 @@
 
 const React = require('react');
 
-require("components/buttons/_button");
+require("components/buttons/_button.scss");
+
+var standardButtons = require('jsx!html-jsx!./standard-buttons.html');
+
+
 
 const Buttons = React.createClass({
   render: function () {
+
+
     return (
         <section className="buttons" id="buttons">
         <h2>Buttons</h2>
         <div className="buttons_example">
           <pre>
-            <code data-language="html"  dangerouslySetInnerHTML={{__html: '<button class="btn--[modifier]">Button Text</button> \n' +
-            '<button class="btn--act">Act</button> \n' +
-            '<button className="btn--[modifier]">Button Text</button> \n' +
-            '\n' +
-            '<button className="btn--act">Act</button>\n' +
-            '<button className="btn--add"><i className="fa fa-plus-circle"></i> Add</button>\n' +
-            '<button className="btn--checkout">Checkout</button>\n' +
-            '<button className="btn--warn">Warn</button>\n' +
-            '\n' +
-            '<button className="btn--modify">Modify</button>\n' +
-           '<button className="btn--reset">Reset</button>\n' +
-            '<button className="btn--cancel">Cancel</button>\n' +
-            '\n' +
-            '<button className="btn--act is-disabled">is-disabled</button>\n' +
-            '<button className="btn--act is-successful">is-successful</button>\n' +
-            '<button className="btn--act is-failed">is-failed</button>\n' +
-            '<button className="btn--act is-waiting"><i className="fa fa-gear fa-spin"></i> is-waiting</button>\n' +
-            '\n' +
-            '\n' +
-            '<button className="btn--kill"><i className="fa fa-times"></i></button>\n' +
-            '\n' +
-            '<button className="btn--more-up"><i className="fa fa-chevron-up"></i></button>\n' +
-            '<button className="btn--more-down"><i className="fa fa-chevron-down"></i></button>\n'}} >
+            <code data-language="html"  dangerouslySetInnerHTML={{__html: standardButtons }} >
             </code>
           </pre>
         </div>
           <div className="panel">
             <h3>Standard Button Styles</h3>
             <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
-            <button className="btn--act">Act</button>
-            <button className="btn--add"><i className="fa fa-plus-circle"></i> Add</button>
-            <button className="btn--checkout">Checkout</button>
-            <button className="btn--warn">Warn</button>
+              <div dangerouslySetInnerHTML={{__html: standardButtons}}></div>
           </div>
 
           <div className="panel">

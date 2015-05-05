@@ -27,42 +27,12 @@ const config = {
   module: {
     noParse: [ ],
     loaders: [
-      {
-        test: /\.jsx/,
-        loader: "jsx-loader?harmony",
-        exclude: [bower_dir, node_modules_dir]
-      },
-      {
-        test: /\.js$/,
-        loader: "jsx-loader?harmony",
-        exclude: [bower_dir, node_modules_dir]
-      },
-      {
-        test: /\.scss$/,
-          loaders: [
-            "style-loader",
-            "css-loader?sourceMap",
-            "autoprefixer-loader?browsers=last 2 version",
-            "sass-loader?sourceMap"
-        ],
-      },
-      {
-        test: /\.css$/,
-        loaders: [
-          "style-loader",
-          "css-loader?sourceMap",
-          "autoprefixer-loader?browser=last 2 version",
-        ],
-      },
-      {
-        test: /\.(jpg|png|svg|gif|eot|ttf|woff)$/,
-        loader: "url-loader",
-        query: {
-          name: "[path][name].[ext]",
-          context: "src",
-          limit: "8192",
-        }
-      },
+      { test: /\.jsx/, loader: "jsx-loader?harmony", exclude: [bower_dir, node_modules_dir] },
+      { test: /\.js$/, loader: "jsx-loader?harmony", exclude: [bower_dir, node_modules_dir] },
+      { test: /\.scss$/, loaders: ["style-loader","css-loader?sourceMap","autoprefixer-loader?browsers=last 2 version","sass-loader?sourceMap"] },
+      { test: /\.css$/, loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browser=last 2 version",]},
+      { test: /\.(jpg|png|svg|gif|eot|ttf|woff)$/, loader: "url-loader", query: { name: "[path][name].[ext]", context: "src", limit: "8192"}},
+//{ test: /\.html$/, loader: 'jsx-loader!imports?React=react!html-jsx-loader'}
     ]
   },
   plugins: [
@@ -78,7 +48,7 @@ const config = {
 
     },
     //this teaches webpack extensions so you can require("file") rather than require(file.ext).
-    extensions: ["", ".js", ".jsx", ".css", ".scss", ".jpg", ".png", ".svg", ".gif"],
+    extensions: ["", ".js", ".jsx", ".css", ".scss", ".jpg", ".png", ".svg", ".gif", "html"],
     modulesDirectories: ["src", "node_modules"]
   },
 };
