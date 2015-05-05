@@ -1,32 +1,30 @@
 "use strict"
 
-const React = require('react');
+var React = require('react');
 
 require("components/buttons/_button.scss");
 
-var standardButtons = require('jsx!html-jsx!./standard-buttons.html');
+var standardButtons = require('raw!./standard-buttons.html');
 
 
 
-const Buttons = React.createClass({
+var Buttons = React.createClass({
   render: function () {
-
-
     return (
         <section className="buttons" id="buttons">
         <h2>Buttons</h2>
         <div className="buttons_example">
           <pre>
-            <code data-language="html"  dangerouslySetInnerHTML={{__html: standardButtons }} >
+            <code data-language="html"  >
+            {standardButtons}
             </code>
           </pre>
         </div>
           <div className="panel">
             <h3>Standard Button Styles</h3>
             <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
-              <div dangerouslySetInnerHTML={{__html: standardButtons}}></div>
+            {require('jsx!html-jsx!./standard-buttons.html')}
           </div>
-
           <div className="panel">
             <h3>Minimal Button Styles</h3>
             <p>Used for secondary user paths and actions.</p>
