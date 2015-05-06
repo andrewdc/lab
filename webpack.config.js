@@ -16,7 +16,7 @@ const config = {
     app: [
       "webpack/hot/dev-server",
       "./src/index.js"
-      ],
+    ],
     vendors: ["react"]
   },
   output: {
@@ -25,22 +25,41 @@ const config = {
   },
   devtool: "source-map",
   module: {
-    noParse: [ ],
-    loaders: [
-      { test: /\.jsx/, loader: "jsx-loader?harmony", exclude: [bower_dir, node_modules_dir] },
-      { test: /\.js$/, loader: "jsx-loader?harmony", exclude: [bower_dir, node_modules_dir] },
-      { test: /\.scss$/, loaders: ["style-loader","css-loader?sourceMap","autoprefixer-loader?browsers=last 2 version","sass-loader?sourceMap"] },
-      { test: /\.css$/, loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browser=last 2 version",]},
-      { test: /\.(jpg|png|svg|gif|eot|ttf|woff)$/, loader: "url-loader", query: { name: "[path][name].[ext]", context: "src", limit: "8192"}},
-//{ test: /\.html$/, loader: 'jsx-loader!imports?React=react!html-jsx-loader'}
+    noParse: [],
+    loaders: [{
+        test: /\.jsx/,
+        loader: "jsx-loader?harmony",
+        exclude: [bower_dir, node_modules_dir]
+      }, {
+        test: /\.js$/,
+        loader: "jsx-loader?harmony",
+        exclude: [bower_dir, node_modules_dir]
+      }, {
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browsers=last 2 version",
+          "sass-loader?sourceMap"
+        ]
+      }, {
+        test: /\.css$/,
+        loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browser=last 2 version", ]
+      }, {
+        test: /\.(jpg|png|svg|gif|eot|ttf|woff)$/,
+        loader: "url-loader",
+        query: {
+          name: "[path][name].[ext]",
+          context: "src",
+          limit: "8192"
+        }
+      },
+      //{ test: /\.html$/, loader: 'jsx-loader!imports?React=react!html-jsx-loader'}
     ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin("common.js", 2),
+    //new webpack.optimize.CommonsChunkPlugin("common.js", 2),
     //chunking plugin - matches key, chunks to file. Chunk vendors will cache after first load and likely not change.
-    new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.js")
+    new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.js", Infinity)
   ],
   resolve: {
     // add aliases for commonly used modules

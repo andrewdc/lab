@@ -14,8 +14,8 @@ var resolveRoute = function () {
       React.render(<Docs area="Home" />, document.getElementById('main'));
     });
 
-  // Or if route is #admin we lazy load that
-} else if (location.hash === '#atoms') {
+    // Or if route is #admin we lazy load that
+  } else if (location.hash === '#atoms') {
     require.ensure([], function () {
       React.render(<Docs area="Atoms" />, document.getElementById('main'));
     });
@@ -30,6 +30,6 @@ window.onhashchange = resolveRoute;
 resolveRoute();
 
 
- //const Container = require("./components/container/Container.js.jsx");
+//const Container = require("./components/container/Container.js.jsx");
 
- //React.render(<Container />, document.getElementById("main"));
+//React.render(<Container />, document.getElementById("main"));

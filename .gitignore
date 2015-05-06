@@ -19,7 +19,8 @@ src/app.css
 src/app.scss
 .DS_Store
 bower_components/
-build
+build/*
 spec/karma-bundle.js
+!build/index.html
 dist
 scratch/
