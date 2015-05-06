@@ -1,23 +1,16 @@
 const webpack = require("webpack");
 const path = require("path");
-const bower_dir = path.join(__dirname, "bower_components");
 const node_modules_dir = path.join(__dirname, "node_modules");
 
 const config = {
   cache: true,
   context: __dirname,
-  // avoiding unnecessary re-bundling of assets we don"t change e.g. vendor stuffs
-  addVendor: function (name, path) {
-    this.resolve.alias[name] = path;
-    this.module.noParse.push(new RegExp("^" + name + '$'));
-  },
   entry: {
     //split up for chunking
     app: [
       "webpack/hot/dev-server",
       "./src/index.js"
-    ],
-    vendors: ["react"]
+    ]
   },
   output: {
     path: path.join(__dirname, "./build"),
@@ -29,11 +22,11 @@ const config = {
     loaders: [{
         test: /\.jsx/,
         loader: "jsx-loader?harmony",
-        exclude: [bower_dir, node_modules_dir]
+        exclude: [node_modules_dir]
       }, {
         test: /\.js$/,
         loader: "jsx-loader?harmony",
-        exclude: [bower_dir, node_modules_dir]
+        exclude: [node_modules_dir]
       }, {
         test: /\.scss$/,
         loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browsers=last 2 version",
@@ -51,7 +44,6 @@ const config = {
           limit: "8192"
         }
       },
-      //{ test: /\.html$/, loader: 'jsx-loader!imports?React=react!html-jsx-loader'}
     ]
   },
   plugins: [
@@ -59,7 +51,7 @@ const config = {
     new webpack.NoErrorsPlugin(),
     //new webpack.optimize.CommonsChunkPlugin("common.js", 2),
     //chunking plugin - matches key, chunks to file. Chunk vendors will cache after first load and likely not change.
-    new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.js", Infinity)
+    //new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.js", Infinity)
   ],
   resolve: {
     // add aliases for commonly used modules
@@ -71,8 +63,5 @@ const config = {
     modulesDirectories: ["src", "node_modules"]
   },
 };
-
-//add noParse vendors here
-config.addVendor("react", bower_dir + "/react/react.js");
 
 module.exports = config;

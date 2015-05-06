@@ -5,8 +5,7 @@ var React = require('react');
 require("components/buttons/_button.scss");
 
 var standardButtons = require('raw!./standard-buttons.html');
-
-
+var code = require('jsx!html-jsx!./standard-buttons.html');
 
 var Buttons = React.createClass({
   render: function () {
@@ -23,7 +22,7 @@ var Buttons = React.createClass({
           <div className="panel">
             <h3>Standard Button Styles</h3>
             <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
-            {require('jsx!html-jsx!./standard-buttons.html')}
+            {code}
           </div>
           <div className="panel">
             <h3>Minimal Button Styles</h3>
