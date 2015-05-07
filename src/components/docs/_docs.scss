@@ -10,28 +10,21 @@ body {
   background-size:cover;
   height:auto !important;
 }
-
-.wrapper {
+main {
   padding:0 qvar(core, space) qvar(core, space) 0;
+  margin-left: 295px;
   @include breakpoint(small) {
+    margin-left: 0;
     padding:0 qvar(core, space)/2 qvar(core, space)/2 qvar(core, space)/2;
   }
   @include breakpoint(mobile) {
+    margin-left: 0;
     padding:0 0 qvar(core, space)/2 0;
   }
 }
 
-main {
-  @include clearfix();
-  margin-left: 295px;
-  @include breakpoint(small) {
-    margin-left: 0;
-  }
-  @include breakpoint(mobile) {
-    margin-left: 0;
-  }
-}
-
+// Docs sections
+// ========================================
 .docs-block{
   border:1px solid $border-glass;
   background: hsla(0, 100%, 100%, 0.137255);
@@ -40,7 +33,6 @@ main {
   min-width: $half;
   margin-top: -2px;
 }
-
 .example-block {
   display:flex;
   align-items:stretch;
@@ -60,40 +52,26 @@ main {
   }
 }
 .docs-panel {
+  @extend %panel;
+  flex-direction:column;
+  h2 {
+    clear: both;
+    color:hsl(0, 0, 0%);
+  }
   @include breakpoint(wide) {
     order:1;
   }
 }
-
 .ace_editor {
   display:flex;
-  position:relative;
   background: hsla(0, 0%, 0%, 0.9);
   border:1px solid rgba(0,0,0,0.14);
   box-shadow:inset 0 0 7px 10px rgba(0,0,0, 0.14), inset 0 -1px 0px 0px rgba(255,255,255, 0.09);
-  border-radius:3px;
-  // font-family:  qvar(font, code);
+  border-radius:qvar(core, border-radius);
   color:darken(qvar(incomm, ic--white), 20);
   text-shadow:0 1px 0 rgba(0,0,0,0.24);
-  border-radius: 3px;
   width:100%;
-  transition:all 0.15s ease-in-out;
-
   @include breakpoint(wide) {
     margin:0 0 0 qvar(core, space)/2;
   }
-  // code {
-  //   font-family:  qvar(font, code);
-  //   font-size:14px;
-  //   overflow: none;
-  // }
 }
-
-.docs-panel {
-    @extend %panel;
-    flex-direction:column;
-    h2 {
-      clear: both;
-      color:hsl(0, 0, 0%);
-    }
-  }
