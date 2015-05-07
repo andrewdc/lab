@@ -45,6 +45,10 @@ main {
   display:flex;
   align-items:stretch;
   margin-bottom:qvar(core, space)/2;
+  flex-direction:column;
+  @include breakpoint(wide) {
+    flex-direction:row;
+  }
 }
 .example, .docs-panel {
   display: flex;
@@ -70,10 +74,12 @@ pre {
   font-family:  qvar(font, code);
   color:darken(qvar(incomm, ic--white), 20);
   text-shadow:0 1px 0 rgba(0,0,0,0.24);
-  //padding: qvar(core, space)/2;
   border-radius: 3px;
-  margin:0 0  0 qvar(core, space);
+  width:100%;
   @include corner-label("Code Pattern", auto, 0);
+  @include breakpoint(wide) {
+    margin:0 0 0 qvar(core, space)/2;
+  }
   code {
     font-family:  qvar(font, code);
     font-size:14px;
