@@ -27,8 +27,8 @@ var Section = React.createClass({
       editor.clearSelection();
     }
 
-    return (<div>
-        <div className="buttons_example">
+    return (<div className="example-block">
+        <div className="example example_buttons">
           <pre>
           <AceEditor
               value={code}
@@ -41,7 +41,7 @@ var Section = React.createClass({
               onChange={handleChange} />
           </pre>
         </div>
-        <div className="panel">
+        <div className="docs-panel">
           <h3>Standard Button Styles</h3>
           <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
           <div dangerouslySetInnerHTML={{__html: code}}></div>
@@ -60,16 +60,16 @@ var Buttons = React.createClass({
   render: function () {
     var standardButtons = this.state.standardButtons;
     return (
-        <section className="buttons" id="buttons">
+        <section className="docs-block buttons" id="buttons">
         <h2>Buttons</h2>
 
           <Section code={standardButtons} />
-          <div className="panel">
+          <div className="docs-panel">
             <h3>Minimal Button Styles</h3>
             <p>Used for secondary user paths and actions.</p>
 
           </div>
-          <div className="panel">
+          <div className="docs-panel">
             <h3>Angular-controlled Button States</h3>
             <p>These classNamees can be added and removed with js for a responsive and informative user experience.</p>
             <button className="btn--act is-disabled">is-disabled</button>
@@ -77,7 +77,7 @@ var Buttons = React.createClass({
             <button className="btn--act is-failed">is-failed</button>
             <button className="btn--act is-waiting"><i className="fa fa-gear fa-spin"></i> is-waiting</button>
           </div>
-          <div className="panel">
+          <div className="docs-panel">
             <h3>Special Case Buttons</h3>
             <p>Where a panel or UI element requires a simple close action (see top right). Typically should cancel whatever action generated the panel.</p>
             <button className="btn--kill">Kill <i className="fa fa-times"></i></button>

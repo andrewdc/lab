@@ -32,43 +32,54 @@ main {
   }
 }
 
-main section{
+.docs-block{
+  //display:flex;
   border:1px solid $border-glass;
   background: hsla(0, 100%, 100%, 0.137255);
   border-radius:2px;
-  clear: left;
   padding:5px qvar(core, space)/2 qvar(core, space) qvar(core, space)/2;
   margin-bottom:qvar(core, space);
   min-width: $half;
   margin-top: -2px;
-  @include clearfix();
 }
 
-code {
-  font-family:  qvar(font, code);
-  font-size:14px;
-  overflow: none;
-  font-weight:400;
+// code {
+//   font-family:  qvar(font, code);
+//   font-size:14px;
+//   overflow: none;
+//   font-weight:400;
+// }
+.example-block {
+  display:flex;
 }
+.example, .docs-panel {
+  display: flex;
+  flex:1;
+}
+.example {
+  @include breakpoint(wide) {
+    order:2;
+  }
+}
+.docs-panel {
+  @include breakpoint(wide) {
+    order:1;
+  }
+}
+
 pre {
   position:relative;
   background: hsla(0, 0%, 0%, 0.9);
-  width: 100%;
   border:1px solid rgba(0,0,0,0.14);
   box-shadow:inset 0 0 7px 10px rgba(0,0,0, 0.14), inset 0 -1px 0px 0px rgba(255,255,255, 0.09);
   border-radius:3px;
+  font-family:  qvar(font, code);
   color:darken(qvar(incomm, ic--white), 20);
   text-shadow:0 1px 0 rgba(0,0,0,0.24);
-  padding: qvar(core, space)/2;
+  //padding: qvar(core, space)/2;
   border-radius: 3px;
-  margin-bottom:qvar(core, space);
+  margin:0 0 qvar(core, space) qvar(core, space);
   @include corner-label("Code Pattern", auto, 0);
-  @include breakpoint(wide) {
-    float: right;
-    clear: right;
-    width:48%;
-    margin-left: qvar(core, space)/2;
-  }
   code {
     font-family:  qvar(font, code);
     font-size:14px;
@@ -76,17 +87,17 @@ pre {
   }
 }
 
-.panel {
+.docs-panel {
     @extend %panel;
-    @include clearfix();
+    flex-direction:column;
     h2 {
       clear: both;
       color:hsl(0, 0, 0%);
     }
     @include breakpoint(wide) {
       margin: 0 0 qvar(core, space)/2 0;
-      width:50%;
-      float: left;
-      clear: left;
+      // width:50%;
+      // float: left;
+      // clear: left;
     }
   }
