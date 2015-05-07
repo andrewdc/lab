@@ -29,17 +29,16 @@ var Section = React.createClass({
 
     return (<div className="example-block">
         <div className="example example_buttons">
-          <pre>
           <AceEditor
               value={code}
               mode="html"
               theme="monokai"
-              height="100px"
+              height=" "
+              width=" "
               showPrintMargin={false}
               showGutter={false}
               onLoad={onLoad}
               onChange={handleChange} />
-          </pre>
         </div>
         <div className="docs-panel">
           <h3>Standard Button Styles</h3>

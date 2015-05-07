@@ -65,13 +65,14 @@ main {
   }
 }
 
-pre {
+.ace_editor {
+  display:flex;
   position:relative;
   background: hsla(0, 0%, 0%, 0.9);
   border:1px solid rgba(0,0,0,0.14);
   box-shadow:inset 0 0 7px 10px rgba(0,0,0, 0.14), inset 0 -1px 0px 0px rgba(255,255,255, 0.09);
   border-radius:3px;
-  font-family:  qvar(font, code);
+  // font-family:  qvar(font, code);
   color:darken(qvar(incomm, ic--white), 20);
   text-shadow:0 1px 0 rgba(0,0,0,0.24);
   border-radius: 3px;
@@ -80,11 +81,11 @@ pre {
   @include breakpoint(wide) {
     margin:0 0 0 qvar(core, space)/2;
   }
-  code {
-    font-family:  qvar(font, code);
-    font-size:14px;
-    overflow: none;
-  }
+  // code {
+  //   font-family:  qvar(font, code);
+  //   font-size:14px;
+  //   overflow: none;
+  // }
 }
 
 .docs-panel {
