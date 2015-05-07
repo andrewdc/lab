@@ -7,11 +7,9 @@ require('components/docs/_docs');
 var Docs = React.createClass({
   render: function () {
     return (
-      <div className="wrapper">
-        <main>
-          <Buttons />
-        </main>
-        </div>
+      <main>
+        <Buttons />
+      </main>
       );
   }
 });
