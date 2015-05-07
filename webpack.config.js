@@ -20,31 +20,28 @@ const config = {
   module: {
     noParse: [],
     loaders: [{
-        test: /\.jsx/,
-        loader: "jsx-loader?harmony",
-        exclude: [node_modules_dir]
-      }, {
-        test: /\.js$/,
-        loader: "jsx-loader?harmony",
-        exclude: [node_modules_dir]
-      }, {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browsers=last 2 version",
-          "sass-loader?sourceMap"
-        ]
-      }, {
-        test: /\.css$/,
-        loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browser=last 2 version", ]
-      }, {
-        test: /\.(jpg|png|svg|gif|eot|ttf|woff)$/,
-        loader: "url-loader",
-        query: {
-          name: "[path][name].[ext]",
-          context: "src",
-          limit: "8192"
-        }
-      },
-    ]
+      test: /\.jsx/,
+      loader: "jsx-loader?harmony"
+    }, {
+      test: /\.js$/,
+      loader: "jsx-loader?harmony"
+    }, {
+      test: /\.scss$/,
+      loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browsers=last 2 version",
+        "sass-loader?sourceMap"
+      ]
+    }, {
+      test: /\.css$/,
+      loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browser=last 2 version", ]
+    }, {
+      test: /\.(jpg|png|svg|gif|eot|ttf|woff)$/,
+      loader: "url-loader",
+      query: {
+        name: "[path][name].[ext]",
+        context: "src",
+        limit: "8192"
+      }
+    }, ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
