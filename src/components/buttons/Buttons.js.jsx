@@ -1,32 +1,69 @@
 "use strict"
 
-var React = require('react');
+var React = require('react'),
+  AceEditor = require('jsx!react-ace');
+
+require('brace/mode/html');
+require('brace/theme/monokai');
 
 require("components/buttons/_button.scss");
 
-var standardButtons = require('raw!./standard-buttons.html');
-var minimalButtons = require('raw!./minimal-buttons.html');
-var code = require('jsx!html-jsx!./standard-buttons.html');
+
+var Section = React.createClass({
+  getInitialState: function() {
+    return {
+      code: this.props.code
+    }
+  },
+  render: function () {
+    var code = this.state.code;
+    var handleChange = function (code) {
+      this.setState({code: code});
+    }.bind(this);
+
+    function onLoad(editor) {
+      var session = editor.getSession();
+      session.setUseWrapMode(true);
+      editor.clearSelection();
+    }
+
+    return (<div>
+        <div className="buttons_example">
+          <pre>
+          <AceEditor
+              value={code}
+              mode="html"
+              theme="monokai"
+              height="100px"
+              showPrintMargin={false}
+              showGutter={false}
+              onLoad={onLoad}
+              onChange={handleChange} />
+          </pre>
+        </div>
+        <div className="panel">
+          <h3>Standard Button Styles</h3>
+          <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
+          <div dangerouslySetInnerHTML={{__html: code}}></div>
+        </div>
+      </div>);
+  }
+});
+
 
 var Buttons = React.createClass({
+  getInitialState: function() {
+    return {
+      standardButtons: require('raw!./standard-buttons.html')
+    };
+  },
   render: function () {
+    var standardButtons = this.state.standardButtons;
     return (
         <section className="buttons" id="buttons">
         <h2>Buttons</h2>
-        <div className="buttons_example">
-          <pre>
-            <code data-language="html"  >
-            {standardButtons}
 
-            {minimalButtons}
-            </code>
-          </pre>
-        </div>
-          <div className="panel">
-            <h3>Standard Button Styles</h3>
-            <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
-            {code}
-          </div>
+          <Section code={standardButtons} />
           <div className="panel">
             <h3>Minimal Button Styles</h3>
             <p>Used for secondary user paths and actions.</p>

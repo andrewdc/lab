@@ -8,10 +8,11 @@
   "author": "adc",
   "license": "MIT",
   "dependencies": {
-    "html-jsx-loader": "git+ssh://git@github.com:andrewdc/html-jsx-loader.git",
+    "brace": "^0.5.1",
     "html-loader": "^0.3.0",
     "node-sass": "^2.1.1",
     "raw-loader": "^0.5.1",
+    "react-ace": "^2.0.0",
     "react-router": "^0.13.2",
     "sass-loader": "^0.6.0",
     "style-loader": "^0.9.0",
