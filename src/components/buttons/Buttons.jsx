@@ -22,7 +22,7 @@ var Section = React.createClass({
 
     return (
       <div className="example-block">
-        <div className="example example_buttons">
+        <div className="example-code example_buttons">
           <AceEditor
               name={this.props.name}
               value={this.state.code}
