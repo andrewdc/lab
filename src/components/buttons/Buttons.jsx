@@ -15,35 +15,29 @@ var Section = React.createClass({
       code: this.props.code
     }
   },
+  handleChange: function (code) {
+    this.setState({code: code});
+  },
   render: function () {
-    var code = this.state.code;
-    var handleChange = function (code) {
-      this.setState({code: code});
-    }.bind(this);
 
-    function onLoad(editor) {
-      var session = editor.getSession();
-      session.setUseWrapMode(true);
-      editor.clearSelection();
-    }
-
-    return (<div className="example-block">
-        <div className="example-code example_buttons">
+    return (
+      <div className="example-block">
+        <div className="example example_buttons">
           <AceEditor
-              value={code}
+              name={this.props.name}
+              value={this.state.code}
+              className="example-editor"
               mode="html"
               theme="monokai"
-              height=" "
-              width=" "
               showPrintMargin={false}
               showGutter={false}
-              onLoad={onLoad}
-              onChange={handleChange} />
+              wordWrap={true}
+              onChange={this.handleChange} />
         </div>
         <div className="docs-panel">
-          <h3>Standard Button Styles</h3>
-          <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
-          <div dangerouslySetInnerHTML={{__html: code}}></div>
+          <h3>{this.props.title}</h3>
+          <p>{this.props.description}</p>
+          <div dangerouslySetInnerHTML={{__html: this.state.code}}></div>
         </div>
       </div>);
   }
@@ -53,21 +47,25 @@ var Section = React.createClass({
 var Buttons = React.createClass({
   getInitialState: function() {
     return {
-      standardButtons: require('raw!./standard-buttons.html')
+      standardButtons: require('raw!./standard-buttons.html'),
+      minimalButtons: require('raw!./minimal-buttons.html')
     };
   },
   render: function () {
-    var standardButtons = this.state.standardButtons;
     return (
         <section className="docs-block buttons" id="buttons">
         <h2>Buttons</h2>
 
-          <Section code={standardButtons} />
-          <div className="docs-panel">
-            <h3>Minimal Button Styles</h3>
-            <p>Used for secondary user paths and actions.</p>
+          <Section name="standardButtons"
+            code={this.state.standardButtons}
+            title="Standard Button Styles"
+            description="Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate." />
 
-          </div>
+          <Section name="minimalButtons"
+            code={this.state.minimalButtons}
+            title="Minimal Button Styles"
+            description="Used for secondary user paths and actions." />
+
           <div className="docs-panel">
             <h3>Angular-controlled Button States</h3>
             <p>These classNamees can be added and removed with js for a responsive and informative user experience.</p>
