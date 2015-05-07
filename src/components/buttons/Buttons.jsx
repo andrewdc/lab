@@ -19,12 +19,11 @@ var Section = React.createClass({
     this.setState({code: code});
   },
   render: function () {
-    var code = this.state.code;
-
-    return (<div className="example-block">
+    return (
+      <div className="example-block">
         <div className="example example_buttons">
           <AceEditor
-              value={code}
+              value={this.state.code}
               className="example-editor"
               mode="html"
               theme="monokai"
@@ -34,9 +33,9 @@ var Section = React.createClass({
               onChange={this.handleChange} />
         </div>
         <div className="docs-panel">
-          <h3>Standard Button Styles</h3>
-          <p>Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate.</p>
-          <div dangerouslySetInnerHTML={{__html: code}}></div>
+          <h3>{this.props.title}</h3>
+          <p>{this.props.description}</p>
+          <div dangerouslySetInnerHTML={{__html: this.state.code}}></div>
         </div>
       </div>);
   }
@@ -55,7 +54,10 @@ var Buttons = React.createClass({
         <section className="docs-block buttons" id="buttons">
         <h2>Buttons</h2>
 
-          <Section code={standardButtons} />
+          <Section code={standardButtons}
+            title="Standard Button Styles"
+            description="Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate." />
+
           <div className="docs-panel">
             <h3>Minimal Button Styles</h3>
             <p>Used for secondary user paths and actions.</p>
