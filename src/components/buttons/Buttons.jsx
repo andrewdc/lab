@@ -15,30 +15,23 @@ var Section = React.createClass({
       code: this.props.code
     }
   },
+  handleChange: function (code) {
+    this.setState({code: code});
+  },
   render: function () {
     var code = this.state.code;
-    var handleChange = function (code) {
-      this.setState({code: code});
-    }.bind(this);
-
-    function onLoad(editor) {
-      var session = editor.getSession();
-      session.setUseWrapMode(true);
-      editor.clearSelection();
-    }
 
     return (<div className="example-block">
         <div className="example example_buttons">
           <AceEditor
               value={code}
+              className="example-editor"
               mode="html"
               theme="monokai"
-              height=" "
-              width=" "
               showPrintMargin={false}
               showGutter={false}
-              onLoad={onLoad}
-              onChange={handleChange} />
+              wordWrap={true}
+              onChange={this.handleChange} />
         </div>
         <div className="docs-panel">
           <h3>Standard Button Styles</h3>

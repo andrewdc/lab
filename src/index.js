@@ -4,7 +4,7 @@
 const React = require("react");
 require("base/_config");
 
-const Docs = require('components/docs/Docs.js.jsx');
+const Docs = require('components/docs/Docs.jsx');
 // We create a function that will lazy load modules based on the current hash
 var resolveRoute = function () {
 
