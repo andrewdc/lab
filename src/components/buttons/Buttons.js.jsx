@@ -28,7 +28,7 @@ var Section = React.createClass({
     }
 
     return (<div className="example-block">
-        <div className="example example_buttons">
+        <div className="example-code example_buttons">
           <AceEditor
               value={code}
               mode="html"

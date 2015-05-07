@@ -42,11 +42,11 @@ main {
     flex-direction:row;
   }
 }
-.example, .docs-panel {
+.example-code, .docs-panel {
   display: flex;
   flex:1;
 }
-.example {
+.example-code {
   @include breakpoint(wide) {
     order:2;
   }
