@@ -23,7 +23,7 @@ body {
 
 main {
   @include clearfix();
-  //margin-left: 295px;
+  margin-left: 295px;
   @include breakpoint(small) {
     margin-left: 0;
   }
@@ -33,24 +33,18 @@ main {
 }
 
 .docs-block{
-  //display:flex;
   border:1px solid $border-glass;
   background: hsla(0, 100%, 100%, 0.137255);
   border-radius:2px;
   padding:5px qvar(core, space)/2 qvar(core, space) qvar(core, space)/2;
-  margin-bottom:qvar(core, space);
   min-width: $half;
   margin-top: -2px;
 }
 
-// code {
-//   font-family:  qvar(font, code);
-//   font-size:14px;
-//   overflow: none;
-//   font-weight:400;
-// }
 .example-block {
   display:flex;
+  align-items:stretch;
+  margin-bottom:qvar(core, space)/2;
 }
 .example, .docs-panel {
   display: flex;
@@ -78,7 +72,7 @@ pre {
   text-shadow:0 1px 0 rgba(0,0,0,0.24);
   //padding: qvar(core, space)/2;
   border-radius: 3px;
-  margin:0 0 qvar(core, space) qvar(core, space);
+  margin:0 0  0 qvar(core, space);
   @include corner-label("Code Pattern", auto, 0);
   code {
     font-family:  qvar(font, code);
@@ -93,11 +87,5 @@ pre {
     h2 {
       clear: both;
       color:hsl(0, 0, 0%);
-    }
-    @include breakpoint(wide) {
-      margin: 0 0 qvar(core, space)/2 0;
-      // width:50%;
-      // float: left;
-      // clear: left;
     }
   }
