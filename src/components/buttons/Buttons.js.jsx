@@ -5,6 +5,7 @@ var React = require('react');
 require("components/buttons/_button.scss");
 
 var standardButtons = require('raw!./standard-buttons.html');
+var minimalButtons = require('raw!./minimal-buttons.html');
 var code = require('jsx!html-jsx!./standard-buttons.html');
 
 var Buttons = React.createClass({
@@ -16,6 +17,8 @@ var Buttons = React.createClass({
           <pre>
             <code data-language="html"  >
             {standardButtons}
+
+            {minimalButtons}
             </code>
           </pre>
         </div>
@@ -27,9 +30,7 @@ var Buttons = React.createClass({
           <div className="panel">
             <h3>Minimal Button Styles</h3>
             <p>Used for secondary user paths and actions.</p>
-            <button className="btn--modify">Modify</button>
-            <button className="btn--reset">Reset</button>
-            <button className="btn--cancel">Cancel</button>
+
           </div>
           <div className="panel">
             <h3>Angular-controlled Button States</h3>
