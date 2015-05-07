@@ -23,7 +23,7 @@ body {
 
 main {
   @include clearfix();
-  margin-left: 295px;
+  //margin-left: 295px;
   @include breakpoint(small) {
     margin-left: 0;
   }
