@@ -50,7 +50,8 @@ var Buttons = React.createClass({
       standardButtons: require('raw!./standard-buttons.html'),
       minimalButtons: require('raw!./minimal-buttons.html'),
       buttonStates: require('raw!./button-states.html'),
-      specialButtons: require('raw!./special-buttons.html')
+      specialButtons: require('raw!./special-buttons.html'),
+      testMD: require('html!markdown!./test.md')
     };
   },
   render: function () {
@@ -77,6 +78,12 @@ var Buttons = React.createClass({
             code={this.state.specialButtons}
             title="Special Buttons"
             description=""
+          />
+
+          <Section name="testMD"
+          code={this.state.testMD}
+          title="Markdown Test"
+          description="Test Markdown Render"
           />
         </section>
       );
