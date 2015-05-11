@@ -6,7 +6,7 @@ var React = require('react'),
 require('brace/mode/html');
 require('brace/theme/monokai');
 
-require("components/buttons/_button.scss");
+require("buttons/_button.scss");
 
 
 var Section = React.createClass({

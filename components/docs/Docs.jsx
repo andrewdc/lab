@@ -1,8 +1,8 @@
 "use strict"
 
 var React = require('react');
-var Buttons = require('components/buttons/Buttons.jsx');
-require('components/docs/_docs');
+var Buttons = require('buttons/Buttons.jsx');
+require('docs/_docs');
 
 var Docs = React.createClass({
   render: function () {

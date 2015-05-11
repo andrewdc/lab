@@ -9,7 +9,7 @@ const config = {
     //split up for chunking
     app: [
       "webpack/hot/dev-server",
-      "./src/index.js"
+      "./index.js"
     ]
   },
   output: {
@@ -57,7 +57,7 @@ const config = {
     },
     //this teaches webpack extensions so you can require("file") rather than require(file.ext).
     extensions: ["", ".js", ".jsx", ".css", ".scss", ".jpg", ".png", ".svg", ".gif", "html"],
-    modulesDirectories: ["src", "node_modules"]
+    modulesDirectories: ["components", "base", "node_modules"]
   },
 };
 
