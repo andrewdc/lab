@@ -1,6 +1,6 @@
 {
   "name": "quiver-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "app/main.js",
   "scripts": {
     "start": "webpack-dev-server --port 1337 --devtool eval --progress --colors  --hot --inline --content-base build/"
