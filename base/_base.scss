@@ -1,27 +1,12 @@
 @import "./base/_theme";
 
 //This file should only set standards for base html tags
-html {
-  box-sizing: border-box;
-}
-
 html, body {
   height: qvar(core, body-height);
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-p {
-  font-size: qvar(type, base-size);
-  line-height: qvar(type, base-line);
-  margin-bottom: qvar(type, base-line);
-  font-weight: qvar(font, weight--light);
 }
 
 body {
@@ -31,6 +16,13 @@ body {
   color: qvar(color, theme-text);
   font-size: qvar(type, base-size);
   line-height: qvar(type, base-line);
+  font-weight: qvar(font, weight--light);
+}
+
+p {
+  font-size: qvar(type, base-size);
+  line-height: qvar(type, base-line);
+  margin-bottom: qvar(type, base-line);
   font-weight: qvar(font, weight--light);
 }
 

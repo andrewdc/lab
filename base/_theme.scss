@@ -86,9 +86,9 @@ $qvar: (
   )
 );
 
-// Variables from the nxsass _theme.scss will be overridden if ALSO set here.
-// Add new variables this map for your app
-// follow the pattern (see nxsass _theme.scss):
+// Variables from the above will be overridden if ALSO set in a map called $app-vars.
+// Add new variables to this map for your app
+// follow the pattern (see above:
 //
 //      module: (
 //       property: value,
