@@ -1,6 +1,4 @@
-@import "./src/base/mixins/_breakpoint";
-@import "./src/base/_theme";
-@import "./src/base/_extends";
+@import "~core/_core";
 
 form {
   @extend %cleared;

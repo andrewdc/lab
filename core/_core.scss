@@ -7,9 +7,9 @@
 //We start with Normalizer as our foundation.
 //Point the following at your normalizer component:
 //@import "./bower_components/font-awesome/scss/font-awesome";
-@import "_normalize";
-@import "_mixins";    //point to nxsass
-@import "_theme";     //point to nxsass
-@import "_extends";   //point to nxsass
-@import "_base";      //point to nxsass
-@import "_states";    //point to nxsass AND you can create your own local version as needed
+@import "~core/_normalize";
+@import "~core/_mixins";    //point to nxsass
+@import "~core/_theme";     //point to nxsass
+@import "~core/_extends";   //point to nxsass
+@import "~core/_base";      //point to nxsass
+@import "~core/_states";    //point to nxsass AND you can create your own local version as needed

@@ -6,7 +6,6 @@ const config = {
   cache: true,
   context: __dirname,
   entry: {
-    //split up for chunking
     app: [
       "webpack/hot/dev-server",
       "./index.js"
@@ -46,9 +45,6 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    //new webpack.optimize.CommonsChunkPlugin("common.js", 2),
-    //chunking plugin - matches key, chunks to file. Chunk vendors will cache after first load and likely not change.
-    //new webpack.optimize.CommonsChunkPlugin("vendors", "vendors.js", Infinity)
   ],
   resolve: {
     // add aliases for commonly used modules
