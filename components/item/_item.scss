@@ -1,8 +1,8 @@
-@import "~core/_theme";
+@import "~core/_core";
 
 .item {
   margin:0;
-  padding:qvar(type, base-leading)/4 qvar(type, gutter)/4;
+  padding:qvar(type, base-leading)/4 qvar(core, space)/2;
   width: 33.33%;
   vertical-align: middle;
   &:hover {

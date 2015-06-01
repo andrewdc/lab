@@ -15,7 +15,7 @@ const config = {
     path: path.join(__dirname, "./build"),
     filename: "bundle.js",
   },
-  devtool: "source-map",
+  devtool: "eval-cheap-module-source-map",
   module: {
     noParse: [],
     loaders: [{

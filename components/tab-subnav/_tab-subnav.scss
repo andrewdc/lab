@@ -1,4 +1,4 @@
-@import "~core/_theme";
+@import "~core/_core";
 
 .tab-subnav {
   border-bottom: 1px solid transparentize(qvar(color, theme-text), 0.4);
@@ -34,10 +34,10 @@
     width: ($third)-1%;
   }
   @include breakpoint(medium) {
-    margin: qvar(core, base-leading)/2 -12px -2px qvar(core, space)+12px; //offsetting the parent border positioning
+    margin: qvar(type, base-leading)/2 -12px -2px qvar(core, space)+12px; //offsetting the parent border positioning
   }
   @include breakpoint(wide) {
-    margin: qvar(core, base-leading)/2 -12px -2px qvar(core, space)+12px; //offsetting the parent border positioning
+    margin: qvar(type, base-leading)/2 -12px -2px qvar(core, space)+12px; //offsetting the parent border positioning
   }
   label {
     color: darken(qvar(color, theme-text), 15);
