@@ -2,6 +2,8 @@
 // "use strict";
 
 const React = require("react");
+
+require("./base/_base");
 require("./core/_core");
 
 const Docs = require('./components/docs/Docs.jsx');

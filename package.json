@@ -3,7 +3,7 @@
   "version": "0.0.10",
   "main": "app/main.js",
   "scripts": {
-    "start": "webpack-dev-server --port 1337 --devtool eval --progress --colors  --hot --inline --content-base build/"
+    "start": "env UV_THREADPOOL_SIZE=100 webpack-dev-server --port 1337 --devtool eval --progress --colors  --hot --inline --content-base build/"
   },
   "author": "adc",
   "license": "MIT",

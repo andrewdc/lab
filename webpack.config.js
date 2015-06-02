@@ -15,7 +15,7 @@ const config = {
     path: path.join(__dirname, "./build"),
     filename: "bundle.js",
   },
-  devtool: "eval-cheap-module-source-map",
+  devtool: "source-map",
   module: {
     noParse: [],
     loaders: [{
@@ -26,8 +26,8 @@ const config = {
       loader: "jsx-loader?harmony"
     }, {
       test: /\.scss$/,
-      loaders: ["style-loader", "css-loader?sourceMap", "autoprefixer-loader?browsers=last 2 version",
-        "sass-loader?sourceMap"
+      loaders: ["style-loader", "css-loader", "autoprefixer-loader?browsers=last 2 version",
+      "sass-loader?sync"
       ]
     }, {
       test: /\.css$/,
