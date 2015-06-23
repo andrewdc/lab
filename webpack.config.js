@@ -1,8 +1,8 @@
-const webpack = require("webpack");
-const path = require("path");
-const node_modules_dir = path.join(__dirname, "node_modules");
+var webpack = require("webpack");
+var path = require("path");
+var node_modules_dir = path.join(__dirname, "node_modules");
 
-const config = {
+var config = {
   cache: true,
   context: __dirname,
   entry: {
