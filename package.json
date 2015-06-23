@@ -60,7 +60,7 @@
   "description": "Sass module system, optimized for dependency mapping",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrewdc/lab.git"
+    "url": "https://github.com/andrewdc/quiver-ui.git"
   },
   "keywords": [
     "sass",
@@ -68,7 +68,7 @@
     "ui"
   ],
   "bugs": {
-    "url": "https://github.com/andrewdc/lab/issues"
+    "url": "https://github.com/andrewdc/quiver-ui/issues"
   },
-  "homepage": "https://github.com/andrewdc/lab"
+  "homepage": "https://github.com/andrewdc/quiver-ui"
 }

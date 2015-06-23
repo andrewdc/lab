@@ -1,2 +1,2 @@
-# lab
-playing around with webpack, React, re-architecting a sass module system
+# Quiver UI
+A component library system for Sass modules
