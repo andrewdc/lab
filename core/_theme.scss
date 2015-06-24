@@ -11,10 +11,10 @@ $qvar: (
     weight--heavy:  800
   ),
   core: (
-    border-radius:      2px,
-    space:                  30px,
+    border-radius:   2px,
+    space:           30px,
     body-background: none,
-    body-height:          auto
+    body-height:     auto
   ),
   type: (
     base-size:      14px,
@@ -23,31 +23,31 @@ $qvar: (
     gutter:             30px
   ),
   color: (
-    light:           #8db5e1,
-    dark:           #212121,
-    theme-text: hsl(0, 0%, 40%),
-    act:             #28AAD0,
-    add:            #5CC281,
-    invalid:        hsl(345, 75%, 40%),
-    valid:           hsl(194, 58%, 74%),
+    light:        #8db5e1,
+    dark:         #212121,
+    theme-text:   hsl(0, 0%, 40%),
+    act:          #28AAD0,
+    add:          #5CC281,
+    invalid:      hsl(345, 75%, 40%),
+    valid:        hsl(194, 58%, 74%),
     required:     hsl(345, 75%, 40%)
   ),
   incomm: (
-    ic--red:                  #cc0033,
-    ic--blue:                 #6699cc,
-    ic--darkgrey:          #333333,
-    ic--middarkgrey:    #666666,
+    ic--red:              #cc0033,
+    ic--blue:             #6699cc,
+    ic--darkgrey:         #333333,
+    ic--middarkgrey:      #666666,
     ic--midlightgrey:     #999999,
-    ic--lightgrey:          #cccccc,
-    ic--superlightgrey: #e7e7e8,
-    ic--white:               #ffffff,
-    ic--orange:            #DE5A2E,
-    ic--yellow:             #DFAC44
+    ic--lightgrey:        #cccccc,
+    ic--superlightgrey:   #e7e7e8,
+    ic--white:            #ffffff,
+    ic--orange:           #DE5A2E,
+    ic--yellow:           #DFAC44
   ),
   credit-cards: (
-    visa:                       #23288F,
-    mastercard:           #CC7404,
-    americanexpress:  #1BAA76,
+    visa:               #23288F,
+    mastercard:         #CC7404,
+    americanexpress:    #1BAA76,
   ),
   panel: (
     padding: 15px,
@@ -74,13 +74,11 @@ $qvar: (
   ),
   button: (
     text-default: #fff,
-    color-act: #6699cc,
+    color-act: (hsl(210, 100%, 44%)),
     color-add: #5CC281,
     color-checkout: #DFAC44,
     color-warn: #CC0033,
     color-disabled: #CCC,
-    background--act: #6699cc,
-    use-grad: true,
     use-boxshad: true,
     use-boxshad-hover: true
   )
@@ -120,6 +118,3 @@ $app-vars: (
 $half:50%;
 $third:33.33%;
 $quarter:25%;
-
-
-

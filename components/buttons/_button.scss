@@ -1,39 +1,42 @@
 @import "../../core/_core";
 
-@mixin button-defaults($bg-color:qvar(button, color-act), $text:qvar(button, text-default), $use-grad:qvar(button, use-grad), $use-boxshad:qvar(button, use-boxshad), $use-boxshad-hover:qvar(button, use-boxshad-hover) ){
+%btn {
+  display: inline-block;
+  text-align:center;
+  vertical-align: middle;
+  cursor: pointer;
+  padding:qvar(core, space)/3 qvar(core, space);
+  font-weight:qvar(font, weight--bold);
+  border:none;
+  border-radius:qvar(core, border-radius);
+  &.is-disabled, &.is-disabled:hover, &[disabled], &[disabled]:hover {
+    color: darken(qvar(button, text-default), 50);
+    background:qvar(button, color-disabled);
+    border:1px solid darken(qvar(button, color-disabled), 5);
+    text-shadow: none;
+    box-shadow: none;
+    cursor: default;
+    transition:all .08s linear;
+  }
+}
+
+@mixin button-skin($bg-color:qvar(button, color-act), $text:qvar(button, text-default), $use-boxshad:qvar(button, use-boxshad), $use-boxshad-hover:qvar(button, use-boxshad-hover) ){
     @extend %btn;
     color: $text;
+    border:1px solid darken($bg-color, 10);
     background: $bg-color;
-    text-shadow: 1px 1px 0 darken($bg-color, 15);
-    transition: all 0.05s ease-in-out;
-    @if $use-grad == true {
-    // @include background-image(radial-gradient(50% 50%, ellipse cover,
-    //             lighten($bg-color,8) 0%,
-    //             $bg-color 46%,
-    //             darken($bg-color,6) 95%,
-    //             darken($bg-color, 20) 97%));
-  } @else {
-    background-image:$use-grad;
-  }
+    text-shadow: 1px 1px 0 darken($bg-color, 18);
+    transition: all 0.08s ease-in-out;
   @if $use-boxshad == true {
-  box-shadow: darken($bg-color, 20) 0 -1px 0 inset,
-              darken($bg-color, 12) 0 -2px 0 inset,
-              lighten($bg-color, 6) 0 1px 0 inset,
-              lighten($bg-color, 10) 0 2px 0 inset,
-              darken($bg-color, 12) 0 0 0px 0px inset;
+    box-shadow:inset 0 1px 0 0 hsla(0, 100%, 100%, 0.15);
   } @else {
     box-shadow:$use-boxshad;
   }
-
   &:hover {
     color: $text;
     text-decoration: none;
     @if $use-boxshad-hover == true {
-      box-shadow: darken($bg-color, 24) 0 -1px 0 inset,
-                  darken($bg-color, 12) 0 -2px 0 inset,
-                  lighten($bg-color, 3) 0 1px 0 inset,
-                  lighten($bg-color, 5) 0 2px 0 inset,
-                  darken($bg-color, 13) 0 0 22px 5px inset;
+      box-shadow:inset 0 -1px 0 0px hsla(0, 0%, 0%, 0.1);
     } @else {
       box-shadow:$use-boxshad-hover;
     }
@@ -43,58 +46,39 @@
  @mixin button-minimals($color:qvar(button, color-add), $text:qvar(button, text-default)) {
   @extend %btn;
   color:desaturate($color, 20);
-  border:1px solid $color;
+  border:none;
   text-shadow:none;
   background: none;
+  font-weight:normal;
   transition: all 0.045s ease-in-out;
   &:hover, &:focus {
     background: $color;
     text-decoration: none;
-    border:1px solid $color;
     text-shadow:0 1px 0 darken($color, 10);
     color:$text;
     box-shadow:inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.15);
   }
 }
 
-
-%btn {
-  display: inline-block;
-  text-align:center;
-  vertical-align: middle;
-  cursor: pointer;
-  padding:qvar(type, base-line)/2 qvar(type, gutter);
-  font-weight:qvar(font, weight--bold);
-  border:none;
-  border-radius:qvar(core, border-radius);
-  &.is-disabled, &.is-disabled:hover, &[disabled], &[disabled]:hover {
-    color: darken(qvar(button, text-default), 50);
-    background:qvar(button, color-disabled);
-    text-shadow: none;
-    box-shadow: none;
-    cursor: default;
-    transition: .08s all linear;
-  }
-}
 //Regular Buttons
 .btn--act {
-  @include button-defaults();
+  @include button-skin();
 }
 .btn--success, .btn--add, .btn-primary.active  {
-  @include button-defaults($bg-color: qvar(button, color-add));
+  @include button-skin($bg-color: qvar(button, color-add));
 }
 .btn--checkout  {
-  @include button-defaults($bg-color: qvar(button, color-checkout));
+  @include button-skin($bg-color: qvar(button, color-checkout));
 }
 .btn--warn  {
-  @include button-defaults($bg-color: qvar(button, color-warn));
+  @include button-skin($bg-color: qvar(button, color-warn));
 }
 //Minimal Buttons
-.btn--modify {
-  @include button-minimals();
+.btn--modify, .btn--link {
+  @include button-minimals($color: qvar(button, color-act));
 }
 .btn--reset {
-  @include button-minimals($color: qvar(button, color-act));
+  @include button-minimals($color: qvar(button, color-checkout));
 }
 .btn--cancel {
   @include button-minimals($color: qvar(button, color-warn));
@@ -102,17 +86,17 @@
 //States
 button {
   &.is-successful, &.is-successful:hover {
-    @include button-defaults($bg-color: qvar(button, color-add));
+    @include button-skin($bg-color: qvar(button, color-add));
     transition: .5s all ease-in;
     cursor: default;
   }
   &.is-failed, &.is-failed:hover {
-    @include button-defaults($bg-color: qvar(button, color-warn));
+    @include button-skin($bg-color: qvar(button, color-warn));
     transition: .5s all ease-out;
     cursor: default;
   }
   &.is-waiting, &.is-waiting:hover {
-    @include button-defaults($bg-color: qvar(button, color-checkout));
+    @include button-skin($bg-color: qvar(button, color-checkout));
     transition: .5s all ease-in;
     cursor: default;
     i {
@@ -146,14 +130,6 @@ button {
   text-align: center;
   width:100%;
   border-radius:3px 3px 0 0;
-  // &:disabled {
-  //   color:qvar(incomm, ic--lightgrey);
-  //     &:hover {
-  //     background:qvar(incomm, ic--superlightgrey);
-  //     color:qvar(incomm, ic--lightgrey);
-  //     cursor:default;
-  //   }
-  // }
 }
 .btn--more-down {
   border-radius:0 0 3px 3px;
