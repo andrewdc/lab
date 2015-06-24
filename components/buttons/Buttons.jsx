@@ -1,104 +1,29 @@
-"use strict"
+/* jslint node: true */
+// "use strict";
 
-var React = require('react'),
-  AceEditor = require('jsx!react-ace');
+/** @jsx React.DOM */
 
-require('brace/mode/html');
-require('brace/theme/monokai');
-
+var React = require('react');
 require("buttons/_button.scss");
-require("container/_container.scss");
-require("credit-cards/_credit-cards.scss");
-require("forms/_forms.scss");
-require("item/_item.scss");
-require("loader/_loader.scss");
-require("modal/_modal.scss");
-require("notify/_notify.scss");
-require("progress-nav/_progress-nav.scss");
-require("quick-values/_quick-value.scss");
-require("tab-subnav/_tab-subnav.scss");
-require("toggle/_toggle.scss");
-require("tooltip/_tooltip.scss");
-
-var Section = React.createClass({
-  getInitialState: function() {
-    return {
-      code: this.props.code
-    }
-  },
-  handleChange: function (code) {
-    this.setState({code: code});
-  },
-  render: function () {
-
-    return (
-      <div className="example-block">
-        <div className="example-code example_buttons">
-          <AceEditor
-              name={this.props.name}
-              value={this.state.code}
-              className="example-editor"
-              mode="html"
-              theme="monokai"
-              showPrintMargin={false}
-              showGutter={false}
-              wordWrap={true}
-              onChange={this.handleChange} />
-        </div>
-        <div className="docs-panel">
-          <h3>{this.props.title}</h3>
-          <p>{this.props.description}</p>
-          <div dangerouslySetInnerHTML={{__html: this.state.code}}></div>
-        </div>
-      </div>);
-  }
-});
-
 
 var Buttons = React.createClass({
-  getInitialState: function() {
-    return {
-      standardButtons: require('raw!./standard-buttons.html'),
-      minimalButtons: require('raw!./minimal-buttons.html'),
-      buttonStates: require('raw!./button-states.html'),
-      specialButtons: require('raw!./special-buttons.html'),
-      testMD: require('html!markdown!./test.md')
-    };
-  },
-  render: function () {
+  render: function() {
     return (
-        <section className="docs-block buttons" id="buttons">
-        <h2>Buttons</h2>
-
-          <Section name="standardButtons"
-            code={this.state.standardButtons}
-            title="Standard Button Styles"
-            description="Primary user actions. Note that Font Awesome icons can be added to buttons when appropriate." />
-
-          <Section name="minimalButtons"
-            code={this.state.minimalButtons}
-            title="Minimal Button Styles"
-            description="Used for secondary user paths and actions." />
-
-          <Section name="buttonStates"
-            code={this.state.buttonStates}
-            title="Button States"
-            description= "These classes can be added and removed with js for a responsive and informative user experience." />
-
-          <Section name="specialButtons"
-            code={this.state.specialButtons}
-            title="Special Buttons"
-            description=""
-          />
-
-          <Section name="testMD"
-          code={this.state.testMD}
-          title="Markdown Test"
-          description="Test Markdown Render"
-          />
-        </section>
-      );
-  }
+      <div className="buttons">
+        <button className="btn--act">Act</button>
+        <button className="btn--add"><i className="fa fa-plus-circle"></i> Add</button>
+        <button className="btn--checkout">Checkout</button>
+        <button className="btn--warn">Warn</button>
+        <button className="btn--modify">Modify</button>
+        <button className="btn--reset">Reset</button>
+        <button className="btn--cancel">Cancel</button>
+        <button className="btn--act is-disabled">is-disabled</button>
+        <button className="btn--act is-successful">is-successful</button>
+        <button className="btn--act is-failed">is-failed</button>
+        <button className="btn--act is-waiting"><i className="fa fa-gear fa-spin"></i> is-waiting</button>
+      </div>
+    );
+  },
 });
 
 module.exports = Buttons;
