@@ -35,6 +35,7 @@
   &:hover {
     color: $text;
     text-decoration: none;
+    background:darken($bg-color, 10);
     @if $use-boxshad-hover == true {
       box-shadow:inset 0 -1px 0 0px hsla(0, 0%, 0%, 0.1);
     } @else {
@@ -50,10 +51,12 @@
   text-shadow:none;
   background: none;
   font-weight:normal;
+  border:1px solid hsla(0, 0%, 0%, 0.0);
   transition: all 0.045s ease-in-out;
   &:hover, &:focus {
     background: $color;
     text-decoration: none;
+    border:1px solid darken($color, 10);
     text-shadow:0 1px 0 darken($color, 10);
     color:$text;
     box-shadow:inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.15);
