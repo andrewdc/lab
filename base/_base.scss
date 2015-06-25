@@ -78,14 +78,19 @@ h6 {
 
 a {
   cursor: pointer;
-  color: qvar(color, light);
+  color: qvar(color, link);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
   }
 }
-
+ul {
+  @extend %list--default;
+}
+ol {
+  @extend %list--ordered;
+}
 img {
   max-width: 100%;
 }
@@ -99,7 +104,7 @@ hr {
 fieldset {
   border: none;
   margin: 0;
-  padding: 0 ;
+  padding: 0;
 }
 section {
   @extend %cleared;

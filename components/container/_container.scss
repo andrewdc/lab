@@ -1,32 +1,20 @@
-@import "~core/_core";
-
+@import "../../core/_core";
 .container {
   @extend %cleared;
   box-sizing: border-box;
   width:100%;
-  max-width:950px;
+  max-width:qvar(container, max-width);
   margin:qvar(container, margin);
   padding:qvar(container, padding);
   background:qvar(container, background);
   @include breakpoint(wide) {
-    width:950px;
-    margin:0 auto;
+    max-width:qvar(container, max-width-wide);
+    margin:qvar(container, margin);
   }
   @include breakpoint(small) {
-    padding:0 5px;
+    padding:qvar(container, padding-small);
   }
   @include breakpoint(mobile) {
-    padding:0 3px;
+    padding:qvar(container, padding-mobile);
   }
-}
-.container.is-edit-mode {
-  @include breakpoint(wide){
-    float: left;
-    margin:0 0 0 35%;
-    width:65%;
-    padding:qvar(core, space);
-  }
-  float: none;
-  width:100%;
-  margin-bottom: 500px;
 }

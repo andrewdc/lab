@@ -53,7 +53,7 @@ var config = {
     },
     //this teaches webpack extensions so you can require("file") rather than require(file.ext).
     extensions: ["", ".js", ".jsx", ".css", ".scss", ".jpg", ".png", ".svg", ".gif", "html"],
-    modulesDirectories: ["components", "base", "node_modules"]
+    modulesDirectories: ["components", "base", "core", "node_modules"]
   },
 };
 

@@ -1,4 +1,11 @@
 $qvar: (
+  core: (
+    border-radius:   2px,
+    space:           30px,
+    body-background: none,
+    body-height:     auto,
+    box-shadow:(hsla(0,0,0,0.09) 0 -3px 0px inset)
+  ),
   font: (
     header: ("Josefin Sans", sans-serif),
     body:   ("Open Sans", sans-serif),
@@ -10,12 +17,6 @@ $qvar: (
     weight--bold:     700,
     weight--heavy:  800
   ),
-  core: (
-    border-radius:   2px,
-    space:           30px,
-    body-background: none,
-    body-height:     auto
-  ),
   type: (
     base-size:      14px,
     base-line:       14px*1.375,
@@ -24,6 +25,7 @@ $qvar: (
   ),
   color: (
     light:        #8db5e1,
+    link:        #8db5e1,
     dark:         #212121,
     theme-text:   hsl(0, 0%, 40%),
     act:          #28AAD0,
@@ -62,9 +64,13 @@ $qvar: (
     box-shadow: (inset 0 2px 1px 1px hsla(0,0,0,0.09))
   ),
   container: (
-    margin: (0, auto),
+    max-width: 950px,
     padding: (0 15px),
-    background: none
+    margin: (0 auto),
+    background: none,
+    max-width-wide: 950px,
+    padding-small: (0 5px),
+    padding-mobile: (0 3px)
   ),
   modal: (
     top: 25%,

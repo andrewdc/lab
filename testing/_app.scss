@@ -1,0 +1,8 @@
+@import "../core/_core";
+body {
+  background:url(https://secure.static.tumblr.com/6f27e725e987114533c96b31b4c58367/lzyknav/mxNn3n32v/tumblr_static_space-background-tumblr-categories-wallpaper.jpg) fixed no-repeat;
+  background-size:cover;
+}
+.buttons {
+  @extend %panel;
+}

@@ -3,15 +3,15 @@
 
 /** @jsx React.DOM */
 var React = require('react');
-require("../components/buttons/_button");
-var Buttons = require("../components/buttons/Buttons.jsx");
+require("../testing/_app");
+var Container = require("../components/container/Container.jsx");
 
 var App = React.createClass({
 	render: function() {
 		return (
 			<div className="app">
 				<h1>Testing area</h1>
-				<Buttons />
+				<Container />
 			</div>
 		);
 	}
