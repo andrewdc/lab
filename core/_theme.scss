@@ -51,6 +51,14 @@ $qvar: (
     mastercard:         #CC7404,
     americanexpress:    #1BAA76,
   ),
+  z-index: (
+    modal:      9000,
+    overlay:    8000,
+    dropdown:   7000,
+    navigation: 6000,
+    header:     5000,
+    footer:     4000
+  ),
   panel: (
     padding: 15px,
     border-radius:2px,
