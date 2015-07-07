@@ -1,10 +1,10 @@
 /* jslint node: true */
 "use strict";
 
-const React = require("react");
-require("components/forms/_forms");
+var React = require("react");
+require("forms/_forms");
 
-const Forms = React.createClass({
+var Forms = React.createClass({
   render: function () {
     return (
       <section className="forms" id="forms">

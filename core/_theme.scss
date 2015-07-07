@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,900,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
 $qvar: (
   core: (
     border-radius:   2px,
@@ -7,7 +10,7 @@ $qvar: (
     box-shadow:(hsla(0,0,0,0.09) 0 -3px 0px inset)
   ),
   font: (
-    header: ("Josefin Sans", sans-serif),
+    header: ("Merriweather", serif),
     body:   ("Open Sans", sans-serif),
     code:   ("Source Code Pro", sans-serif),
     weight--thin:     100,

@@ -9,7 +9,7 @@ require("buttons/_button");
 var Buttons = React.createClass({
   render: function() {
     return (
-      <div className="buttons">
+      <section className="buttons">
         <button className="btn--act">Act</button>
         <button className="btn--add"><i className="fa fa-plus-circle"></i> Add</button>
         <button className="btn--checkout">Checkout</button>
@@ -23,7 +23,7 @@ var Buttons = React.createClass({
         <button className="btn--act is-waiting"><i className="fa fa-gear fa-spin"></i> is-waiting</button>
         <p className="bonch">test</p>
         <button className="btn--kill"><i className="fa fa-times"></i></button>
-      </div>
+      </section>
     );
   },
 });
