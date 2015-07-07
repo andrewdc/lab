@@ -7,14 +7,14 @@
   margin:qvar(container, margin);
   padding:qvar(container, padding);
   background:qvar(container, background);
-  @include breakpoint(wide) {
+  @include media(">=large") {
     max-width:qvar(container, max-width-wide);
     margin:qvar(container, margin);
   }
-  @include breakpoint(small) {
+  @include media("<=medium") {
     padding:qvar(container, padding-small);
   }
-  @include breakpoint(mobile) {
+  @include media("<=small") {
     padding:qvar(container, padding-mobile);
   }
 }
